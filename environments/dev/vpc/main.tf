@@ -14,7 +14,7 @@ terraform {
 }
 
 module "vpc" {
-  source = "../../vpc"
+  source = "../../../modules/vpc"
 
   env = "dev"
   azs = ["ap-southeast-1a","ap-southeast-1b"]
