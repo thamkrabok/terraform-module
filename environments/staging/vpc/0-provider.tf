@@ -7,10 +7,10 @@ terraform {
 
     backend "remote" {
       hostname =  "app.terraform.io"
-      organization = "Default Project"
+      organization = "beleiftfeks"
 
       workspaces {
-        prefix = terraform-eks-staging
+        name = terraform-module-staging
       }
     }
 
