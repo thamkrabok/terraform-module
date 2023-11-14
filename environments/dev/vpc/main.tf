@@ -8,7 +8,7 @@ terraform {
     organization = "beleiftfeks"
 
     workspaces {
-        name = terraform-module-staging
+        name = terraform-module-dev
     }
   }
 }
