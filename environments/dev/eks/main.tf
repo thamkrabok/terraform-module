@@ -21,14 +21,25 @@ module "eks" {
     subnet_ids      = ["subnet-0e00c5227cb7daaad","subnet-0d0d07080c562e554"]
 
     node_groups = {
-        scaling_config   = {
-            desired_size = 1
-            max_size     = 10
-            min_size     = 0
+        general = {
+            capacity_type    = "ON_DEMAND"
+            instance_types   = ["t3.medium"]
+            scaling_config   = {
+                desired_size = 1
+                max_size     = 10
+                min_size     = 0
+            }
         }
-
-        capacity_type    = "ON_DEMAND"
-        instance_types   = ["t3.medium"]
     }
+    # node_groups = {
+    #     scaling_config   = {
+    #         desired_size = 1
+    #         max_size     = 10
+    #         min_size     = 0
+    #     }
+
+    #     capacity_type    = "ON_DEMAND"
+    #     instance_types   = ["t3.medium"]
+    # }
 }
 

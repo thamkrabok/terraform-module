@@ -1,5 +1,5 @@
 resource "aws_eks_node_group" "this" {
-  for_each = var.aws_eks_node_groups
+  for_each = var.node_groups
 
   cluster_name      = aws_eks_cluster.this.name
   node_group_name   = each.key
