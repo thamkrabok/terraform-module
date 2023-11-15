@@ -16,19 +16,19 @@ terraform {
 module "eks" {
     source = "../../../modules/eks"
     eks_version = "1.26"
-    env         = include.env.locals.env
+    env         = "dev"
     eks_name    = "demo"
-    subnet_ids  = ["subnet-0e00c5227cb7daaad","subnet-0d0d07080c562e554"]
+    subnet      = module.vpc.private_subnet_ids
 
     node_groups = {
-        desired_size = 1
-        max_size     = 10
-        min_size     = 0
+        scaling_config   = {
+            desired_size = 1
+            max_size     = 10
+            min_size     = 0
+        }
 
         capacity_type    = "ON_DEMAND"
         instance_types   = ["t3.medium"]
     }
-
-    tags = var.tags
 }
 
