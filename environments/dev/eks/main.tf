@@ -18,7 +18,7 @@ module "eks" {
     eks_version = "1.26"
     env         = include.env.locals.env
     eks_name    = "demo"
-    subnet      = module.vpc.private_subnet_ids
+    subnet      = output.private_subnet_ids
 
     node_groups = {
         desired_size = 1
