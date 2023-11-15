@@ -18,7 +18,7 @@ module "eks" {
     eks_version = "1.26"
     env         = "dev"
     eks_name    = "demo"
-    subnet      = ["subnet-0e00c5227cb7daaad","subnet-0d0d07080c562e554"]
+    subnet_ids      = ["subnet-0e00c5227cb7daaad","subnet-0d0d07080c562e554"]
 
     node_groups = {
         scaling_config   = {
