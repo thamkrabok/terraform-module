@@ -1,7 +1,7 @@
 resource "aws_iam_role" "eks" {
   name = "${var.env}-${var.eks_name}-eks-cluster"
 
-  asuume_role_policy = <<POLICY
+  assume_role_policy = <<POLICY
 {
     "Version": "2012-10-17",
     "Statement": [
