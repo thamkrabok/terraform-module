@@ -31,7 +31,7 @@ resource "aws_eks_cluster" "this" {
       endpoint_private_access = false
       endpoint_public_access = true
 
-      subnet_ids = module.vpc.private_subnet_ids
+      subnet_ids = var.subnet_ids
     }
 
     depends_on = [ aws_iam_role_policy_attachment.eks ]
