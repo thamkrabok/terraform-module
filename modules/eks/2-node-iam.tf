@@ -1,7 +1,7 @@
 resource "aws_iam_role" "nodes" {
   name = "${var.env}-${var.eks_name}-eks-nodes"
 
-  assume_role_policy = jsondecode({
+  assume_role_policy = jsonencode({
     Statement = [{
         Action = "sts:AssumeRole"
         Effect = "Allow"
