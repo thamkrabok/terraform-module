@@ -47,3 +47,13 @@ variable "tags" {
     "Project" = "TH.SE.DESIGN"
   }
 }
+
+variable "cicdadm" {
+  description = "IAM cicdadm for attach to everything"
+  type  = string
+}
+
+variable "arncicdadm" {
+  description = "arn of cicdadm"
+  type = string
+}

@@ -19,7 +19,9 @@ module "eks" {
     env         = "dev"
     eks_name    = "demo"
     subnet_ids      = ["subnet-0e00c5227cb7daaad","subnet-0d0d07080c562e554"]
-    
+    cicdadm = "CICDTestPolicy"
+    arncicdadm = "arn:aws:iam::305069123134:policy/CICDTestPolicy"
+
 
     node_groups = {
         general = {
