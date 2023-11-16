@@ -11,6 +11,8 @@ resource "aws_iam_role" "nodes" {
     }]
     Version = "2012-10-17"
   })
+
+  depends_on = [ aws_iam_role_policy_attachment.eks ]
 }
 
 resource "aws_iam_role_policy_attachment" "nodes" {
